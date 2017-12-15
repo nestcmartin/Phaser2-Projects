@@ -17,6 +17,14 @@ var stateText;
 var livingEnemies = [];
 var firingTimer = 0;
 
+var sounds = {
+  
+  musica: null,
+  update: function() {
+    if(!this.musica.isPlaying) this.musica.play();
+  }
+}
+
 var mainState = {
 	preload: function() {
 		game.load.image('starfield', 'assets/starfield.png');
@@ -25,6 +33,7 @@ var mainState = {
 		game.load.image('enemy', 'assets/enemy.png');
 		game.load.image('enemyBullet', 'assets/enemyBullet.png');		
 		game.load.image('live', 'assets/live.png');
+		game.load.audio('ngin', ['assets/ngin.ogg']);
 	},
 
 	create: function() {
@@ -80,6 +89,8 @@ var mainState = {
 	},
 
 	update: function() {
+
+		sounds.update();
 
 		spacefield.tilePosition.y += backgroundv;
 
