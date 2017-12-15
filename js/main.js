@@ -16,14 +16,7 @@ var enemyBullet;
 var stateText;
 var livingEnemies = [];
 var firingTimer = 0;
-
-var sounds = {
-  
-  musica: null,
-  update: function() {
-    if(!this.musica.isPlaying) this.musica.play();
-  }
-}
+var music;
 
 var mainState = {
 	preload: function() {
@@ -86,11 +79,14 @@ var mainState = {
 	        var live = lives.create(game.world.width - 100 + (30 * i), 60, 'live');
 	        live.anchor.setTo(0.5, 0.5);
 	    }
+
+	    music = game.add.audio('ngin');
+	    music.play();
 	},
 
 	update: function() {
 
-		sounds.update();
+		if(!music.isPlaying) music.play();
 
 		spacefield.tilePosition.y += backgroundv;
 
