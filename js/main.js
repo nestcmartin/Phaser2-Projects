@@ -86,8 +86,6 @@ var mainState = {
 
 	update: function() {
 
-		if(!music.isPlaying) music.play();
-
 		spacefield.tilePosition.y += backgroundv;
 
 		if (player.alive)
