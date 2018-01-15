@@ -69,8 +69,8 @@ var PacmanGame = function (game) {
     this.isPaused = false;
     this.FRIGHTENED_MODE_TIME = 7000;
     
-    this.ORIGINAL_OVERFLOW_ERROR_ON = true;
-    this.DEBUG_ON = true;
+    this.ORIGINAL_OVERFLOW_ERROR_ON = false;
+    this.DEBUG_ON = false;
     
     this.KEY_COOLING_DOWN_TIME = 250;
     this.lastKeyPressed = 0;
