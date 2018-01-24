@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <title>Tutorial</title>
+  <meta charset="utf-8">
+
+  <script src="js/lib/phaser.min.js"></script>
+  <script type="text/javascript" src="js/boot.js"></script>
+  <script type="text/javascript" src="js/preloader.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/play.js"></script>
+
+  <style>
+  body {
+    padding: 0;
+    margin: 0;
+    background: #000;
+  }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+
+  var GAME_W = 800;
+  var GAME_H = 600;
+
+  window.onload = function () {
+
+    var game = new Phaser.Game(GAME_W, GAME_H, Phaser.AUTO, '');
+
+    game.state.add('boot', Game.Boot);
+    game.state.add('preloader', Game.Preloader);
+    game.state.add('menu', Game.Menu);
+    game.state.add('play', Game.Play);
+
+    game.state.start('boot');
+  };
+
+  </script>
+</body>
+</html>
